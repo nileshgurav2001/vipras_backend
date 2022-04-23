@@ -30,20 +30,23 @@ app.get("/", (req,res)=>{
 })
 
 
+
 app.use("/admin", require("./routes/admin"));
-
-const createToken = async() => {
-  const token = await jwt.sign({email:"admin123@gmail.com"}, "mynameisnileshganaptiguravigapeducation",{
-        expiresIn: "2 seconds"
-  });
-  console.log(token);
-
-  const userVer = await jwt.verify(token, "mynameisnileshganaptiguravigapeducation")
-  console.log(userVer);
-};
+app.use("/admin/bussiness", require("./routes/bussiness"));
 
 
- createToken();
+// const createToken = async() => {
+//   const token = await jwt.sign({email:"admin123@gmail.com"}, "mynameisnileshganaptiguravigapeducation",{
+//         expiresIn: "2 seconds"
+//   });
+//   console.log(token);
+
+//   const userVer = await jwt.verify(token, "mynameisnileshganaptiguravigapeducation")
+//   console.log(userVer);
+// };
+
+
+//  createToken();
 
 
 const  PORT = process.env.PORT || 8081;

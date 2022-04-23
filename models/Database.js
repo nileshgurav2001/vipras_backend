@@ -6,7 +6,7 @@ class Database {
             host: "localhost",
             user: "root",
             password: "",
-            database: "vipras_india"
+            database: "igap_store"
         });
     }
     query = (sql,args) => {
